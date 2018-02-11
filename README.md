@@ -6,7 +6,7 @@
 2. Start Wampserver.
 3. Install database.More info under Database section.
 4. Make folder name "register" under www directory.
-5. Copy files and folders  /www/register directory.
+5. Copy files and folders  "/www/register" directory.
 6. Open Chrome, Firefox .. and open "http://localhost/register" links. 
 
 <H3>Functions</H3>
@@ -27,7 +27,7 @@
 
 <H3>Information about program</H3>
 
-* Site login name:admin, password:admin
-* Site langauge Hungarian!!
+*Site login name:admin, password:admin
+*Site langauge Hungarian!!
 
 This project there are more bugs!! I keep develop!
