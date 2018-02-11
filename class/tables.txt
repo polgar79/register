@@ -1,0 +1,68 @@
+
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+DROP TABLE IF EXISTS `despoit`;
+CREATE TABLE IF NOT EXISTS `despoit` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `userdata_id` int(11) NOT NULL,
+  `amount` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=1096 DEFAULT CHARSET=utf8;
+
+
+
+DROP TABLE IF EXISTS `operator`;
+CREATE TABLE IF NOT EXISTS `operator` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `oid` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+
+
+INSERT INTO `operator` (`id`, `username`, `password`, `oid`) VALUES
+(1, 'admin', 'admin', '0000');
+
+
+
+
+DROP TABLE IF EXISTS `streets`;
+CREATE TABLE IF NOT EXISTS `streets` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `streetname` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+
+
+
+INSERT INTO `streets` (`id`, `streetname`) VALUES
+(2, 'Teszt street'),
+(1, 'Teszt street1'),
+(3, 'Teszt street2');
+
+DROP TABLE IF EXISTS `userdata`;
+CREATE TABLE IF NOT EXISTS `userdata` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `birthdate` varchar(4) NOT NULL,
+  `active` tinyint(1) NOT NULL,
+  `city` varchar(100) NOT NULL,
+  `street` varchar(100) NOT NULL,
+  `hnumber` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=651 DEFAULT CHARSET=utf8;
+
+INSERT INTO `userdata` (`id`, `name`, `birthdate`, `active`, `city`, `street`, `hnumber`) VALUES
+(1, 'Test User', '1979', 1, 'Győr', 'Teszt street', '1');
+
+COMMIT;
+
+
