@@ -1,7 +1,7 @@
 <?php 
-include 'class/db.php'; 
-include 'lang/lang.php';
-include 'includes/functions.php';
+//include  'class/db.php'; 
+include  'lang/lang.php';
+include  'includes/functions.php';
 
 
 
@@ -49,7 +49,7 @@ include 'includes/functions.php';
   		
   			<li><a href="search.php"><?php echo SEARCH;?></a></li>
   			
-  			<li><a href="#"><?php echo SETTINGS;?></a></li>
+  			<li><a href="settings.php"><?php echo SETTINGS;?></a></li>
   			
   			<li><a href="logout.php"><?php echo LOGOUT;?></a></li>
   		

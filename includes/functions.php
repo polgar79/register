@@ -1,4 +1,5 @@
 <?php 
+include 'class/db.php';
 function dinamicPageTitle() {
 
     $parts = explode('/', $_SERVER["SCRIPT_NAME"]);
@@ -27,6 +28,29 @@ function dinamicPageTitle() {
 
     }
     
+
+    
+}
+function passwordChange($password) {
+   
+    $db = new Db();
+    $query = "UPDATE operator SET password='{$password}' WHERE id=1";
+   
+    $result = mysqli_query($db->conn, $query);
+    
+    if (!$result) {
+        echo  mysqli_error($db->conn);
+    }
+    
+    else echo " Mentve";
+    return $result;
+}
+
+function passwordHash($pass) {
+    
+    $hashadpass = password_hash($pass, PASSWORD_DEFAULT);
+    return $hashadpass;
+   
 }
 
 

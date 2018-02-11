@@ -100,15 +100,26 @@ table {
 th, td {
     /*padding: 15px;*/
 }
+/*index.php*/
+div.login {
+border: 1px solid #dddddd;
 
-.login {
-	
- display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
+margin-top:150px;
+float:right;
+text-align: right;
+padding: 10px 0 10px 0;
 	}
+#box
+{
+border: 0px solid #dddddd;	
+
+margin-left:500px;
+margin-top:0px;
+margin-right: 540px;
+
+}
+
+}
 div.tarolo
 {
 	position:relative;
@@ -235,4 +246,25 @@ margin:10px 10px 10px 10px;
 }
 #ellenoriz{
 padding: 10px 0 10px 10px;	
+}
+/*settings.php*/
+
+div.sett{
+	
+border: 1px solid #dddddd;
+width: 80%;
+margin:auto;
+padding: 10px 0 10px 0;
+/*float:right;
+text-align: right;*/
+}
+
+#pass
+{
+border: 0px solid #0000ff;	
+width: 400px;
+margin:auto;
+padding: 10px 0 10px 10px;
+/*float:right;*/
+text-align: right;
 }

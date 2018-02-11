@@ -12,39 +12,27 @@ include 'class/db.php';
 <body>
 <div class="login">
 	<form name ="flogin" action ="" method = "post">
-	<table>
-		<!-- Első sor -->
-		<tr>
-			<td>Felhasználói név</td>
-			<td><input type="text" name="login_name"></td>
-		</tr>
-		<tr>
-			<td>Jelszó</td>
-			<td><input type="text" name="user_password"></td>
-		</tr>
-		<tr>
-			<td colspan="2"><input type="submit" name = "submit" value="Bejelentkezés"></td>
-		</tr>
-		<tr>
-			<td>
-			<?php 
-			/*if(isset($error)) echo ($error);*/
-			
-			?>
-			</td>
-		</tr>
-	</table>
-		
-		
-		
-	</form>
-</div>
-</body>
+	
+	
+	  <div class="login" id ="box">
+	  <label>Felhasználói név:</label>
+	  <input type="text" name="login_name" required="required">
+	 </div>
+	 
+	 <div class="login" id ="box">
+	 <label>Jelszó:</label>
+	 <input type="password" name="user_password" required="required">
+	 </div>
+	 <div class="login" id ="box">
+	 <br>
+	 <input type="submit" name = "submit" value="Bejelentkezés">
+	 </div>
+</form>
+<div>
 
-</html>
 <?php
 $db = new Db();
-if(isset($_POST['login_name']))
+if(isset($_POST['submit']))
 {
    /*Munkamenet indítása*/
    
@@ -52,39 +40,38 @@ if(isset($_POST['login_name']))
    
     $login_name = $_POST['login_name'];
     $user_password = $_POST['user_password'];
-   // $_SESSION['login_name'] = $login_name;
-    /*test kiirtás*/
-   // print_r($_SESSION);
     
-     $query = "SELECT * FROM OPERATOR WHERE username = '$login_name' and password = '$user_password' ";
-     $result = mysqli_query($db->conn, $query);
-     
-     while($row = $result->fetch_array())
-     {
-         //echo $row['USERNAME'] . " " . $row['OID'];
-         //  echo "<br />";
-         $_SESSION['OID'] = $row['oid'];
-     }
-     
-     if(mysqli_num_rows($result) !=0)
-     {
-         echo ("Van találat");
-         echo $_SESSION['OID'];
-         echo "<br>";
-         header('Location: index1.php');
-     }
-     else
+    $query = "SELECT * FROM operator WHERE username='{$login_name}' ";
+    $result = mysqli_query($db->conn, $query);
+
+    
+     while($row = mysqli_fetch_array($result))
      {
          
-        //header('Location: index.php');
-       
-         $error = "Rossz bejelentkezési adatok";
-         print ($error);
-        // echo ("Rossz bejelentkezési adatok");
-        // header('Location: ('$_SERVER['SERVER_NAME']')');
-         //session_destroy();
-     }
-    
+        
+       $userFromDb =$row['username'];
+       $hashedPasswordFromDB = $row['password'];
+       $oid = $row['oid'];
+        
+        if (password_verify($user_password , $hashedPasswordFromDB) and ($userFromDb ==  $login_name)) {
+           
+            $_SESSION['OID'] = $oid;
+            
+            
+           
+            header('Location: index1.php');
+         
+             }
+             
+         
+  
+         }
 }
-//else echo ('Nincs submit');
 ?>
+
+</div>
+
+</div>
+</body>
+
+</html>
