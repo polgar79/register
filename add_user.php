@@ -17,7 +17,7 @@ include 'includes/header.php';
 <div class ="adduser">
 	<form name ="useradd" action ="" method = "post">
 		<div class="cim">
-		<?php echo _ADD_USER_TITLE;?>
+		<?php echo ADD_USER_TITLE;?>
 		</div>
 		<div class="adduser" id ="name">
 		<label>Vezetéknév:</label>

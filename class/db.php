@@ -1,6 +1,6 @@
 <?php
 
-include 'includes/config.php';
+include_once 'includes/config.php';
 class Db {
     public $conn;
     function __construct()

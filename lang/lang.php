@@ -15,4 +15,7 @@ define("U_MANAGER", "Személyek kezelése");
 /*functions.php*/
 define("HOMETITLE", "Főoldal");
 
+/*add_user.php*/
+define("ADD_USER_TITLE","Befizető felvétele")
+
 ?>
