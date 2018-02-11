@@ -27,7 +27,7 @@
 
 <H3>Information about program</H3>
 
-*Site login name:admin, password:admin
-*Site langauge Hungarian!!
+* Site login name:admin, password:admin
+* Site langauge Hungarian!!
 
 This project there are more bugs!! I keep develop!
