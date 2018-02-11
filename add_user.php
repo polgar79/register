@@ -3,7 +3,7 @@ session_start();
 if(isset($_SESSION['OID'])) {
 include 'includes/config.php';
 include 'includes/header.php';
-include 'class/functions.php';
+//include 'class/functions.php';
 ?>
 
 <!DOCTYPE html>
