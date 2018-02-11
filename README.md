@@ -1,4 +1,4 @@
-<H1>Hello! <H1>
+<H1>Hello!</H1>
 This is my first php project with more bug!!
 
 * Mysql database for the project
