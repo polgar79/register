@@ -9,8 +9,8 @@ class Db {
         $this->conn = mysqli_connect('localhost','root','','mydb') or die (mysqli_error($this->conn));
        
         mysqli_set_charset($this->conn,"utf8");
-       print  mysqli_character_set_name($this->conn);
-       echo "Kapcsolódva";
+      // print  mysqli_character_set_name($this->conn);
+      // echo "Kapcsolódva";
         
     }
     
