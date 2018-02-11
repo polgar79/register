@@ -1,5 +1,10 @@
 <H1>This is a payment register project</H1>
 
+<H3>Installation</H3>
+
+1.Download [Wampserver](http://www.wampserver.com/en/) 
+
+
 <H3>Functions</H3>
 
 1. Add and edit user data
