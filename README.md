@@ -1,4 +1,4 @@
-<H1>This is a payment register project</H1>
+<H1>This is a Hungarian payments register project</H1>
 
 <H3>Installation</H3>
 
