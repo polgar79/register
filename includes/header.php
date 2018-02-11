@@ -39,7 +39,7 @@ include 'includes/functions.php';
   			<a href=""><?php echo MANAGE_Y_PAYM;?></a>
   			<div>
   				<a href="payment.php"><?php echo ADD_P;?></a>
-  				<a href="search.php"><?php echo STATEMENTS;?></a>
+  				<a href="#"><?php echo STATEMENTS;?></a>
 
   			
   				</div>

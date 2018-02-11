@@ -7,15 +7,24 @@ function dinamicPageTitle() {
     switch ($page){
         case 'index1.php':
             return $title= HOMETITLE;
-            //$description = 'index description here';
             break;
             
         case 'add_user.php':
             return $title= ADD_PA_USER;
-           // $description = 'about description here';
+            break;
+            
+        case 'userlist.php':
+            return $title= EDIT_U_DATA;
+            break;
+            
+        case 'payment.php':
+            return $title= ADD_P;
+            break;
+            
+        case 'search.php':
+            return $title= SEARCH;
             break;
 
-             
     }
     
 }

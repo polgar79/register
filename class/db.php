@@ -1,12 +1,12 @@
 <?php
 
-
+include 'includes/config.php';
 class Db {
     public $conn;
     function __construct()
     
     {
-        $this->conn = mysqli_connect('localhost','root','','mydb') or die (mysqli_error($this->conn));
+        $this->conn = mysqli_connect(DB_SERVER,DB_USER,DB_PASS,DB_NAME) or die (mysqli_error($this->conn));
        
         mysqli_set_charset($this->conn,"utf8");
       // print  mysqli_character_set_name($this->conn);
