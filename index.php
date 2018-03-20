@@ -34,8 +34,6 @@ include 'class/db.php';
 $db = new Db();
 if(isset($_POST['submit']))
 {
-   /*Munkamenet indítása*/
-   
     session_start();
    
     $login_name = $_POST['login_name'];
@@ -45,10 +43,8 @@ if(isset($_POST['submit']))
     $result = mysqli_query($db->conn, $query);
 
     
-     while($row = mysqli_fetch_array($result))
-     {
-         
-        
+     while($row = mysqli_fetch_array($result)){
+       
        $userFromDb =$row['username'];
        $hashedPasswordFromDB = $row['password'];
        $oid = $row['oid'];
@@ -56,15 +52,9 @@ if(isset($_POST['submit']))
         if (password_verify($user_password , $hashedPasswordFromDB) and ($userFromDb ==  $login_name)) {
            
             $_SESSION['OID'] = $oid;
-            
-            
-           
             header('Location: index1.php');
-         
-             }
-             
-         
-  
+            }
+
          }
 }
 ?>

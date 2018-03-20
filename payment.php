@@ -14,9 +14,10 @@ $db = new Db();
 		
 		
 		<label> Befizető neve</label>
-		<select id="cmbUser" name="user"">
+		<select id="cmbUser" name="user">
    				 <?php 
-                     
+   				 if(isset($_POST['user'])) 
+   				 {
                      $result = $db->userlist();
                     
                      while ($row = mysqli_fetch_array($result))
@@ -30,6 +31,15 @@ $db = new Db();
                    
                       }
                       echo '  </select>';
+   				 }else 
+   				 {
+   				     $result = $db->userlist();
+   				     while ($row = mysqli_fetch_array($result))
+   				     {
+   				         echo "<option value=\"".$row['id']."\" >".$row['name']."</option>\n ";
+   				     }
+   				     
+   				 }
                      ?>
                     
 
